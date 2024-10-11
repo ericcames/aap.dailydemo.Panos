@@ -121,6 +121,7 @@ images:
 ```
 
 **A Custom Credential is reguired for Day 2 ops**
+
 Input configuration
 ```
 fields:
