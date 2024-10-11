@@ -72,7 +72,6 @@
             - "commit"
           "VM#":
             - "exit"
-          "PA-VM>":
 
   rescue:
 
