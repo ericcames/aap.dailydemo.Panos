@@ -10,6 +10,10 @@ Day 1
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palouipre.png "Pre Login")
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palouipost.png "Post Login")
 
+**PaloAlto Documentation**
+
+![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palorestdoc.png "API Docs")
+
 **The job logs contain the URL needed to login to the gui**
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palojoblog.png "Job Log")
 
