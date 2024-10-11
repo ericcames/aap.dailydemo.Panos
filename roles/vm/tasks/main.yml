@@ -44,7 +44,7 @@
         port: 22
         host: "{{ item['public_ip_address'] }}"
         search_regex: OpenSSH
-        delay: 60
+        delay: 1
         sleep: 30
         timeout: 900
 
