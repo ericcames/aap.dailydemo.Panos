@@ -24,5 +24,7 @@
         name: inventory
 
     - name: PaloAlto API documentation
+      tags:
+        - create
       ansible.builtin.debug:
         msg: "{{ ec2_vms.instances[0].public_dns_name }}/restapi-doc/"
