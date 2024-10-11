@@ -68,11 +68,11 @@
             - "{{ password }}"
           "Confirm password :":
             - "{{ password }}"
-          "admin@PA-VM#":
+          "#":
             - "commit"
-          "admin@PA-VM#":
+          "VM#":
             - "exit"
-          "admin@PA-VM>":
+          "PA-VM>":
 
   rescue:
 
