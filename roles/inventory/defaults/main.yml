@@ -1,0 +1,9 @@
+---
+inventory_vm_name: F5 Daily Demo
+# Use a custom credential for this
+# controller_url: example.com
+# controller_user: mickey.mouse
+# controller_passwd: password
+inventory_managed_inventory_name: AAP Managed Inventory
+inventory_region: us-west-1
+ansible_python_interpreter: /usr/bin/python3
