@@ -56,6 +56,10 @@
       ansible.builtin.debug:
         msg: "{{ ec2_vms.instances[0].public_ip_address }}"
 
+    - name: Wait for things to come up
+      ansible.builtin.pause:
+        seconds: 120
+
     - name: Set the initial admin password
       ansible.builtin.expect:
         command: "ssh -o StrictHostKeyChecking=accept-new admin@{{ ec2_vms.instances[0].public_dns_name }}"
