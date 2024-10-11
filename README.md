@@ -1,6 +1,6 @@
 Ansible Automation Platform Daily Demo for PaloAlto
 =========
-A demo designed to build the PaloAlto Infrastructure needed to showcase many of the use cases related to PaloAlto.  This builds a standalone PaloAlto at Amazon and sets the admin password so you will be ready to go when the playbook is done building the infrastructure.
+A demo designed to build the PaloAlto Infrastructure needed to showcase many of the use cases related to PaloAlto.  This builds a standalone PaloAlto at Amazon and sets the admin password so you will be ready to go when the playbook is done building the infrastructure. This Demo takes 20 minutes to spin up.
 
 Day 1
 =========
@@ -10,7 +10,7 @@ Day 1
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palouipre.png "Pre Login")
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palouipost.png "Post Login")
 
-**PaloAlto Documentation**
+**PaloAlto API Documentation**
 
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palorestdoc.png "API Docs")
 
