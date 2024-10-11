@@ -1,6 +1,6 @@
 Ansible Automation Platform Daily Demo for PaloAlto
 =========
-A demo designed to build the PaloAlto Infrastructure needed to showcase many of the use cases related to PaloAlto.  This builds a standalone PaloAlto at Amazon and sets the admin password so you will be ready to go when the playbook is done building the infrastructure. This Demo takes 20 minutes to spin up.
+A demo designed to build the PaloAlto Infrastructure needed to showcase many of the use cases related to PaloAlto.  This builds a standalone PaloAlto at Amazon and sets the admin password so you will be ready to go when the playbook is done building the infrastructure. This demo infrastructure takes 20 minutes to spin up.
 
 Day 1
 =========
