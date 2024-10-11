@@ -46,7 +46,7 @@
         search_regex: OpenSSH
         delay: 60
         sleep: 30
-        timeout: 330
+        timeout: 900
 
     - name: URL for the new VM
       ansible.builtin.debug:
