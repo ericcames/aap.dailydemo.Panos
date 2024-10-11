@@ -62,17 +62,15 @@
         responses:
           "admin@PA-VM>":
             - "configure"
+            - "exit"
           "admin@PA-VM#":
             - "set mgt-config users admin password"
+            - "commit"
+            - "exit"
           "Enter password   :":
             - "{{ password }}"
           "Confirm password :":
             - "{{ password }}"
-          "#":
-            - "commit"
-          "VM#":
-            - "exit"
-          "dmin@PA-VM>":
 
   rescue:
 
