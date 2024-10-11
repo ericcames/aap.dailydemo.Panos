@@ -11,7 +11,7 @@ Day 1
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palouipost.png "Post Login")
 
 **The job logs contain the URL needed to login to the gui**
-![alt text](https://github.com/ericcames/aap.dailydemo.F5/blob/main/images/F5joblog.png "Job Log")
+![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palojoblog.png "Job Log")
 
 ```
 https://ec2-54-67-87-75.us-west-1.compute.amazonaws.com
