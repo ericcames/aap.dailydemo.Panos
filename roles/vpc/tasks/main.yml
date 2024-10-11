@@ -47,10 +47,6 @@
             ports: 443
             cidr_ip: "0.0.0.0/0"
             rule_desc: https
-          - proto: tcp
-            ports: 8443
-            cidr_ip: "0.0.0.0/0"
-            rule_desc: allow all on 8443
 
     - name: Create subnet
       register: my_vpc_subnet

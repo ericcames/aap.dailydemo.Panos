@@ -1,5 +1,5 @@
 ---
-inventory_vm_name: F5 Daily Demo
+inventory_vm_name: Panos Daily Demo
 # Use a custom credential for this
 # controller_url: example.com
 # controller_user: mickey.mouse

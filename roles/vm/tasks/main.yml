@@ -1,8 +1,9 @@
 ---
 - name: Creating a vm with Inc managment in the case of failure
   tags:
-    - createvm
+    - create
   block:
+
     - name: Looking up Subnet_id
       register: subnet_id
       amazon.aws.ec2_vpc_subnet_info:
@@ -45,28 +46,9 @@
         search_regex: OpenSSH
         delay: 10
 
-    - name: Wait for things to come up
-      ansible.builtin.pause:
-        seconds: 60
-
-    - name: Set the initial admin password
-      ansible.builtin.expect:
-        command: "ssh -o StrictHostKeyChecking=accept-new admin@{{ ec2_vms.instances[0].public_dns_name }} modify auth user admin prompt-for-password"
-        responses:
-          "new password:":
-            - "{{ password }}"
-          "confirm password:":
-            - "{{ password }}"
-
-    - name: Save the running config
-      ansible.builtin.expect:
-        command: "ssh -o StrictHostKeyChecking=accept-new admin@{{ ec2_vms.instances[0].public_dns_name }} save sys config"
-        responses:
-          "saving ...done":
-
-    - name: URL for the new F5
+    - name: URL for the new VM
       ansible.builtin.debug:
-        msg: "https://{{ ec2_vms.instances[0].public_dns_name }}:8443"
+        msg: "https://{{ ec2_vms.instances[0].public_dns_name }}"
 
     - name: Public IP for the new f5
       ansible.builtin.debug:
@@ -96,10 +78,11 @@
       ansible.builtin.fail:
         msg: failing so we create the incident ticket
 
-- name: Removing our F5 vm
+- name: Removing our Panos vm
   tags:
-    - removevm
+    - remove
   block:
+
     - name: Get instances id with appropriate Environment tag
       register: instance_info
       amazon.aws.ec2_instance_info:
