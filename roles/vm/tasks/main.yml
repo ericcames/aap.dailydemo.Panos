@@ -56,6 +56,24 @@
       ansible.builtin.debug:
         msg: "{{ ec2_vms.instances[0].public_ip_address }}"
 
+    - name: Set the initial admin password
+      ansible.builtin.expect:
+        command: "ssh -o StrictHostKeyChecking=accept-new admin@{{ ec2_vms.instances[0].public_dns_name }}"
+        responses:
+          "admin@PA-VM>":
+            - "configure"
+          "admin@PA-VM#":
+            - "set mgt-config users admin password"
+          "Enter password   :":
+            - "{{ password }}"
+          "Confirm password :":
+            - "{{ password }}"
+          "admin@PA-VM#":
+            - "commit"
+          "admin@PA-VM#":
+            - "exit"
+          "admin@PA-VM>":
+
   rescue:
 
     - name: Capture the error message
