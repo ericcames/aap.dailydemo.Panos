@@ -14,6 +14,10 @@ Day 1
 
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palorestdoc.png "API Docs")
 
+```
+https://FQDN/restapi-doc/
+```
+
 **The job logs contain the URL needed to login to the gui**
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palojoblog.png "Job Log")
 
