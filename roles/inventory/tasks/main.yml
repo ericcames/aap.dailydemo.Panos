@@ -47,6 +47,8 @@
         inventory: "{{ inventory_managed_inventory_name }}"
         state: present
         enabled: true
+        variables:
+          ip_address: "{{ ec2_vms.instances[0].public_ip_address }}"
 
     - name: Create a group
       loop: "{{ instance_info['instances'] }}"
