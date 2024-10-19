@@ -4,15 +4,16 @@
     - always
   block:
 
-    - name: Check for our mandatory variables
-      # You can create a custom credential for the mandatory variables
+    # fail with good error for Automation controller user
+    - name: Determine that both AAP and Machine credentials are set
       ansible.builtin.assert:
         that:
-          - controller_url is defined
-          - controller_user is defined
-          - controller_passwd is defined
-        fail_msg: "Please make sure your mandatory variables are set"
-        success_msg: "All mandatory variables have been set"
+          - "lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') !=''"
+          - "lookup('ansible.builtin.env', 'CONTROLLER_HOST') !=''"
+          - "lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') !=''"
+        fail_msg:
+          - "Red Hat Ansible Automation Platform credential is not set"
+          - "Please assign correct credentials to the Job Template"
 
     - name: Get Demo instances we care about
       register: instance_info
@@ -24,9 +25,9 @@
 
     - name: Create a new token using username/password
       ansible.controller.token:
-        controller_host: https://{{ controller_url }}
-        controller_username: "{{ controller_user }}"
-        controller_password: "{{ controller_passwd }}"
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+        controller_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
+        controller_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
         validate_certs: false
         description: Daily Demo token
         scope: write
@@ -40,7 +41,7 @@
     - name: Update the AAP Managed Inventory
       loop: "{{ instance_info['instances'] }}"
       ansible.controller.host:
-        controller_host: https://{{ controller_url }}
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
         controller_oauthtoken: "{{ controller_token }}"
         validate_certs: false
         name: "{{ item['public_dns_name'] }}"
@@ -53,7 +54,7 @@
     - name: Create a group
       loop: "{{ instance_info['instances'] }}"
       ansible.controller.group:
-        controller_host: https://{{ controller_url }}
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
         controller_oauthtoken: "{{ controller_token }}"
         validate_certs: false
         name: panosdemo
@@ -77,7 +78,7 @@
     - name: Remove vm from the inventory
       loop: "{{ instance_info['instances'] }}"
       ansible.controller.host:
-        controller_host: https://{{ controller_url }}
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
         controller_oauthtoken: "{{ controller_token }}"
         validate_certs: false
         name: "{{ item['public_dns_name'] }}"
@@ -88,7 +89,7 @@
       loop:
         - panosdemo
       ansible.controller.group:
-        controller_host: https://{{ controller_url }}
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
         controller_oauthtoken: "{{ controller_token }}"
         validate_certs: false
         name: "{{ item }}"
