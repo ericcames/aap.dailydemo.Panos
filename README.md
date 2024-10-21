@@ -36,7 +36,7 @@ ssh admin@ec2-54-67-87-75.us-west-1.compute.amazonaws.com
 **The playbooks**
 
 [1. Create or Delete PaloAlto](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/playbooks/main.yml "main.yml")<br>
-![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palocreate.png "Create")<br>
+![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palomain.png "Main Playbook")<br>
 
 Tag used:
 ```
