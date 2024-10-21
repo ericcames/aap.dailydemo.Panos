@@ -70,6 +70,14 @@
         groups:
           - panosdemo
 
+    - name: Remove my daily demo token
+      ansible.controller.token:
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+        controller_oauthtoken: "{{ controller_token }}"
+        existing_token: "{{ controller_token }}"
+        validate_certs: false
+        state: absent
+
 - name: Removing our vm from our inventory
   tags:
     - remove
@@ -94,4 +102,12 @@
         validate_certs: false
         name: "{{ item }}"
         inventory: "{{ inventory_managed_inventory_name }}"
+        state: absent
+
+    - name: Remove my daily demo token
+      ansible.controller.token:
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+        controller_oauthtoken: "{{ controller_token }}"
+        existing_token: "{{ controller_token }}"
+        validate_certs: false
         state: absent
