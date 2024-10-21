@@ -35,52 +35,20 @@ ssh admin@ec2-54-67-87-75.us-west-1.compute.amazonaws.com
 
 **The playbooks**
 
-[1. Create the PaloAlto](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/playbooks/palo-create.yml "palo-create.yml")<br>
+[1. Create or Delete PaloAlto](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/playbooks/main.yml "main.yml")<br>
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palocreate.png "Create")<br>
 
 Tag used:
 ```
 create
-```
-[2. Remove the PaloAlto](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/playbooks/palo-remove.yml "palo-remove.yml")<br>
-![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/paloremove.png "Remove")<br>
-
-Tags used:
-```
+  or
 remove
 ```
-
 **The Credentials Types**
 
-Ansible Controller Credential<br>
-Input configuration
-```
-fields:
-  - id: url
-    type: string
-    label: Controller URL
-  - id: user
-    type: string
-    label: Controller Username
-  - id: password
-    type: string
-    label: Controller Password
-    secret: true
-required:
-  - url
-  - user
-  - password
-```
-Injector configuration
-```
-extra_vars:
-  controller_url: '{{url}}'
-  controller_user: '{{user}}'
-  controller_passwd: '{{password}}'
-```
+Red Hat Ansible Automation Platform<br>
 Daily Demo Panos Machine Credential<br>
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palomachinecred.png "Machine Credential")<br>
-
 Amazon Web Services Credential<br>
 
 **The AAP Managed Inventory**
