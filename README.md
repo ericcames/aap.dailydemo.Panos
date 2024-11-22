@@ -124,10 +124,11 @@ extra_vars:
   username: '{{ username }}'
   password: '{{ password }}'
 ```
-# Looking for the Windows Daily Demo?
+Looking for other Daily Demos?
+=========
 
 - [AAP Daily Demo Windows](https://github.com/ericcames/aap.dailydemo.windows "AAP Daily Demo Windows")
-
-# Looking for the Linux Daily Demo?
-
 - [AAP Daily Demo Linux](https://github.com/ericcames/aap.dailydemo.linux "AAP Daily Demo Linux")
+- [AAP Daily Demo F5](https://github.com/ericcames/aap.dailydemo.F5 "AAP Daily Demo F5")
+- [AAP Daily Demo Panos](https://github.com/ericcames/aap.dailydemo.Panos "AAP Daily Demo Panos")
+- [AAP Daily Demo Satellite](https://github.com/ericcames/aap.dailydemo.satellite "AAP Daily Demo Satellite")
