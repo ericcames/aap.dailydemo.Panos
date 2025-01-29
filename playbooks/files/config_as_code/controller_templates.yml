@@ -16,7 +16,7 @@ controller_templates:
     survey_enabled: true
     survey: "{{ lookup('template', 'template_surveys/basic_survey.json') | regex_replace('\\n', '') }}"
 
-  - name: "1 - Palo Alto - Get System Info"
+  - name: "1 - Panos - Get System Info"
     job_type: run
     inventory: AAP Managed Inventory
     organization: "{{ my_organization }}"
