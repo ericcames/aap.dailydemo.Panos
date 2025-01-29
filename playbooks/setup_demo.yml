@@ -9,6 +9,7 @@
     my_rh_aap_credential: "ericames.ddns.net - controller"
     my_aws_credential: "AWS Credential"
     my_aws_machine_credential: "AWS Machine Credential - Ames"
+    timezone_id: "America/Phoenix"
 
   tasks:
 

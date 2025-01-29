@@ -2,7 +2,7 @@
 controller_schedules:
   - name: Daily Demo Panos auto delete
     description: Schedule to run the demo playbook once a day at 6:00 pm
-    rrule: DTSTART;TZID=America/Phoenix:20230101T180000 RRULE:FREQ=DAILY;INTERVAL=1
+    rrule: DTSTART;TZID="{{ timezone_id }}":20230101T180000 RRULE:FREQ=DAILY;INTERVAL=1
     unified_job_template: "Daily Demo Panos Create/Remove"
     state: present
     job_tags: remove
