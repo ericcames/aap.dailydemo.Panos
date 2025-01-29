@@ -5,7 +5,7 @@ controller_templates:
     inventory: AAP Managed Inventory
     organization: "{{ my_organization }}"
     execution_environment: Default execution environment
-    project: aap.dailydemo.panos
+    project: aap.dailydemo.Panos
     playbook: playbooks/main.yml
     ask_tags_on_launch: true
     job_tags: create,remove
