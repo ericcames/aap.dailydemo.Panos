@@ -1,0 +1,7 @@
+---
+controller_projects:
+  - name: mlowcher_panos_examples
+    organization: "{{ my_organization }}"
+    scm_type: git
+    wait: true
+    scm_url: https://gitlab.com/mlowcher/panos.git

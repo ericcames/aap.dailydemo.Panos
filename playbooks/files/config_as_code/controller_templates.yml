@@ -1,0 +1,27 @@
+---
+controller_templates:
+  - name: "Daily Demo Panos Create/Remove"
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: Default execution environment
+    project: aap.dailydemo.panos
+    playbook: playbooks/main.yml
+    ask_tags_on_launch: true
+    job_tags: create,remove
+    credentials:
+      - Daily Demo Panos
+      - "{{ my_aws_credential }}"
+      - "{{ my_rh_aap_credential }}"
+    survey_enabled: true
+    survey: "{{ lookup('template', 'template_surveys/basic_survey.json') | regex_replace('\\n', '') }}"
+
+  - name: "1 - Palo Alto - Get System Info"
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: Panos_ee
+    project: mlowcher_panos_examples
+    playbook: get_system_info_formatted.yml
+    credentials:
+      - Daily Demo Panos API
