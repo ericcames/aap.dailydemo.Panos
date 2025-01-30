@@ -78,6 +78,7 @@
 
     - name: Generate a panos api key
       register: panos_api_key
+      no_log: true
       ansible.builtin.uri:
         url: "https://{{ ec2_vms.instances[0].public_dns_name }}/api/?type=keygen&user=admin&password={{ password }}"
         validate_certs: false
@@ -85,7 +86,7 @@
 
     - name: Print out panos_api_key
       ansible.builtin.debug:
-        var: panos_api_key
+        msg: "{{ panos_api_key['content']}}"
 
   rescue:
 
