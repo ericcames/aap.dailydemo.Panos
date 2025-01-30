@@ -76,6 +76,17 @@
           "Confirm password :":
             - "{{ password }}"
 
+    - name: Generate and panos api key
+      register: panos_api_key
+      ansible.builtin.uri:
+        url: "https://{{ ec2_vms.instances[0].public_dns_name }}/api/?type=keygen"
+        user: admin
+        password: "{{ password }}"
+
+    - name: Print out panos_api_key
+      ansible.builtin.debug:
+        var: panos_api_key
+
   rescue:
 
     - name: Capture the error message
