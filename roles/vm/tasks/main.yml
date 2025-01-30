@@ -92,6 +92,14 @@
       ansible.builtin.debug:
         var: my_panos_api_key
 
+    - name: Update the Daily Demo Panos API credential
+      ansible.controller.credential:
+        name: Daily Demo Panos API
+        credential_type: Vault
+        organization: "{{ my_organization }}"
+        inputs:
+          api_key: 'my_panos_api_key'
+
   rescue:
 
     - name: Capture the error message

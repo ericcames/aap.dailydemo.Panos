@@ -2,6 +2,8 @@
 - name: Panos daily demo
   hosts: localhost
   connection: local
+  vars:
+    my_organization: "AmesCO"
 
   tasks:
 
