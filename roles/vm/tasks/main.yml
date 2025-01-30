@@ -86,7 +86,7 @@
 
     - name: Print out panos_api_key
       ansible.builtin.debug:
-        msg: "{{ panos_api_key['content'] }}"
+        msg: "{{ panos_api_key['content'] | ansible.utils.from_xml }}"
 
   rescue:
 
