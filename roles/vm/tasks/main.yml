@@ -95,7 +95,7 @@
     - name: Update the Daily Demo Panos API credential
       ansible.controller.credential:
         name: Daily Demo Panos API
-        credential_type: Vault
+        credential_type: panos
         organization: "{{ my_organization }}"
         inputs:
           api_key: 'my_panos_api_key'
