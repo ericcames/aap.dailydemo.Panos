@@ -76,7 +76,7 @@
           "Confirm password :":
             - "{{ password }}"
 
-    - name: Generate and panos api key
+    - name: Generate a panos api key
       register: panos_api_key
       ansible.builtin.uri:
         url: "https://{{ ec2_vms.instances[0].public_dns_name }}/api/?type=keygen"
