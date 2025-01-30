@@ -99,6 +99,8 @@
         organization: "{{ my_organization }}"
         inputs:
           api_key: 'my_panos_api_key'
+          api_username: admin
+          api_password: "{{ password }}"
 
   rescue:
 
