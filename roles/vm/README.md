@@ -12,8 +12,8 @@ Amazon Web Services Credential in Ansible Automation Platform
 Role Variables
 --------------
 ```
-vm_name: F5 Daily Demo
-vm_vpc_name: f5-dailydemo
+vm_name: Panos Daily Demo
+vm_vpc_name: Panos-dailydemo
 vm_user_name: eric.ames
 vm_subnet_name: "{{ vm_vpc_name }}_Subnet"
 vm_image: ami-0a6612e49a32df1e9
@@ -35,7 +35,7 @@ Example Playbook
 ----------------
 ```
 ---
-- name: Create our F5 daily demo vm
+- name: Create our Panos daily demo vm
   hosts: localhost
   connection: local
 
@@ -50,7 +50,7 @@ Example Playbook
 or
 
 ---
-- name: Remove our F5 daily demo vm
+- name: Remove our Panos daily demo vm
   hosts: localhost
   connection: local
 
