@@ -52,7 +52,7 @@
       ansible.builtin.debug:
         msg: "https://{{ ec2_vms.instances[0].public_dns_name }}"
 
-    - name: Public IP for the new f5
+    - name: Public IP for the new Panos
       ansible.builtin.debug:
         msg: "{{ ec2_vms.instances[0].public_ip_address }}"
 
