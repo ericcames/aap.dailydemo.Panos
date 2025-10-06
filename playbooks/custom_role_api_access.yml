@@ -1,0 +1,24 @@
+---
+- name: Create custom admin role for API access
+  hosts: panosdemo
+  gather_facts: false
+
+  vars:
+    device:
+      ip_address: '{{ ip_address }}' # Panarama or firewall
+      username: '{{ username | default(omit) }}'
+      password: '{{ password | default(omit) }}'
+      api_key: '{{ api_key | default(omit) }}'
+
+  tasks:
+
+    - name: Create an API-only admin role
+      paloaltonetworks.panos.panos_admin:
+        provider: "{{ device }}"
+        name: "api-only-role"
+        webui_access:
+          # Disable all web UI access
+          - { name: "all", access: "disable" }
+        xml_api_access:
+          - { name: "all", access: "enable" }
+        commit: true
