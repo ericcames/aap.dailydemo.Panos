@@ -25,3 +25,43 @@ controller_templates:
     playbook: get_system_info_formatted.yml
     credentials:
       - Daily Demo Panos API
+
+  - name: "2 - Panos - Create firewall objects"
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: Panos_ee
+    project: mlowcher_panos_examples
+    playbook: create_fw_objects.yml
+    credentials:
+      - Daily Demo Panos API
+
+  - name: "3 - Panos - Add/Remove security zones"
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: Panos_ee
+    project: mlowcher_panos_examples
+    playbook: add_remove_firewall_zones.yml
+    credentials:
+      - Daily Demo Panos API
+
+  - name: "4 - Panos - Add/Remove security policy to firewall"
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: Panos_ee
+    project: mlowcher_panos_examples
+    playbook: add_sec_policy_firewall.yml
+    credentials:
+      - Daily Demo Panos API
+
+  - name: "5 - Panos - Create virtual router and security zones"
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: Panos_ee
+    project: mlowcher_panos_examples
+    playbook: create_virtual_router_and_zones.yml
+    credentials:
+      - Daily Demo Panos API
