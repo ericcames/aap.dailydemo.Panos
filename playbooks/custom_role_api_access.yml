@@ -1,6 +1,7 @@
 ---
 - name: Create custom admin role for API access
-  hosts: panosdemo
+  hosts: localhost
+  connection: local
   gather_facts: false
 
   vars:
