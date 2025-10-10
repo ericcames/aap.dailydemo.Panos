@@ -16,6 +16,12 @@
       ansible.builtin.set_fact:
         vpc_subnet_id: "{{ subnet_id.subnets[0].id }}"
 
+    - name: Grab my public ssh key from remote url
+      ansible.builtin.get_url:
+        url: '{{ my_remote_ssh_pub_key }}'
+        dest: files/id_rsa.pub
+        mode: '0644'
+
     - name: Creating machine instance
       register: ec2_vms
       amazon.aws.ec2_instance:

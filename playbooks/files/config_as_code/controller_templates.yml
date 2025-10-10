@@ -12,9 +12,19 @@ controller_templates:
     credentials:
       - Daily Demo Panos
       - "{{ my_aws_credential }}"
-      - "{{ my_rh_aap_credential }}"
+      - "{{ my_aap_credential }}"
     survey_enabled: true
-    survey: "{{ lookup('template', 'template_surveys/basic_survey.json') | regex_replace('\\n', '') }}"
+    survey_spec:
+      name: ""
+      description: ""
+      spec:
+        - name: Default password
+          type: password
+          question_name: What is your admin password?
+          question_description: Setting the admin password
+          variable: password
+          required: true
+          default: "{{ admin_password }}"
 
   - name: "1 - Panos - Get System Info"
     job_type: run
