@@ -4,7 +4,7 @@ controller_templates:
     job_type: run
     inventory: AAP Managed Inventory
     organization: "{{ my_organization }}"
-    execution_environment: Default execution environment
+    execution_environment: amazon_aws_ee
     project: aap.dailydemo.Panos
     playbook: playbooks/main.yml
     ask_tags_on_launch: true
