@@ -2,6 +2,33 @@ Ansible Automation Platform Daily Demo for PaloAlto
 =========
 A demo designed to build the PaloAlto Infrastructure needed to showcase many of the use cases related to PaloAlto.  This builds a standalone PaloAlto at Amazon and sets the admin password so you will be ready to go when the playbook is done building the infrastructure. This demo infrastructure takes 20 minutes to spin up.
 
+Notes
+=========
+1. This demo is designed to work with the Red Hat Demo Platform. Please see the aap.as.code repo below. [aap.as.code](https://github.com/ericcames/aap.as.code "aap.as.code")
+2. This demo works with Amazon only currently.
+3. Must accept Terms and conditions at this link before running this. https://aws.amazon.com/marketplace/pp/prodview-mn63yjbq37n4c
+![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/panosoptin.png "Terms")
+
+Day 0 - Configuration as code (CAC) a repeatable build process for this demo
+=========
+Configuration as code give you an easy way to recover/move your ansible related artifacts to a new platform.  That includes your hardcoded credentials.  The hardcoded credentials can be safely vaulted in an ansible vault file.  Check out the setup_demo.yml for the configurations for setting up this demo using configuration as code.
+
+[Setup - Panos Daily Demo - CAC](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/playbooks/setup_demo.yml "Setup - Panos Daily Demo - CAC")<br>
+
+Variables used in the setup template
+```
+my_organization: AmesCO
+timezone_id: America/Phoenix
+my_vault: Eric Ames
+my_aap_credential: Controller Credential
+my_aws_credential: AWS
+aap_configuration_async_retries: 60
+my_remote_vault: >-
+  https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml
+my_remote_ssh_pub_key: >-
+  https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub
+```
+
 Day 1
 =========
 
