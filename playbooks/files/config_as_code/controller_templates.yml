@@ -13,6 +13,8 @@ controller_templates:
       - Daily Demo Panos
       - "{{ my_aws_credential }}"
       - "{{ my_aap_credential }}"
+    extra_vars:
+      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
     survey_enabled: true
     survey_spec:
       name: ""
