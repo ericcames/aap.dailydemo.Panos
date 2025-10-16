@@ -51,6 +51,19 @@
         variables:
           ip_address: "{{ ec2_vms.instances[0].public_ip_address }}"
 
+    - name: Update the AAP Managed Inventory localhost variable
+      loop: "{{ instance_info['instances'] }}"
+      ansible.controller.host:
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+        controller_oauthtoken: "{{ aap_token['token'] }}"
+        validate_certs: false
+        name: localhost
+        inventory: "{{ inventory_managed_inventory_name }}"
+        state: present
+        enabled: true
+        variables:
+          ip_address: "{{ ec2_vms.instances[0].public_ip_address }}"
+
     - name: Create a group
       loop: "{{ instance_info['instances'] }}"
       ansible.controller.group:
@@ -82,16 +95,6 @@
   tags:
     - remove
   block:
-
-    # - name: Remove vm from the inventory
-    #   loop: "{{ instance_info['instances'] }}"
-    #   ansible.controller.host:
-    #     controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
-    #     controller_oauthtoken: "{{ controller_token }}"
-    #     validate_certs: false
-    #     name: "{{ item['public_dns_name'] }}"
-    #     inventory: "{{ inventory_managed_inventory_name }}"
-    #     state: absent
 
     - name: Remove inventory host groups
       loop:

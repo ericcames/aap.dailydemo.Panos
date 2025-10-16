@@ -47,6 +47,19 @@ controller_templates:
     playbook: create_fw_objects.yml
     credentials:
       - Daily Demo Panos API
+    survey_enabled: true
+    survey_spec:
+      name: ""
+      description: ""
+      spec:
+        - name: Prefered state
+          type: multiplechoice
+          question_name: Do you want to add or remove?
+          question_description: Add or Remove
+          variable: state
+          required: true
+          default: present
+          choices: present absent
 
   - name: "3 - Panos - Add/Remove security zones"
     job_type: run
@@ -57,6 +70,19 @@ controller_templates:
     playbook: add_remove_firewall_zones.yml
     credentials:
       - Daily Demo Panos API
+    survey_enabled: true
+    survey_spec:
+      name: ""
+      description: ""
+      spec:
+        - name: Prefered state
+          type: multiplechoice
+          question_name: Do you want to add or remove?
+          question_description: Add or Remove
+          variable: state
+          required: true
+          default: present
+          choices: present absent
 
   - name: "4 - Panos - Add/Remove security policy to firewall"
     job_type: run
@@ -67,6 +93,19 @@ controller_templates:
     playbook: add_sec_policy_firewall.yml
     credentials:
       - Daily Demo Panos API
+    survey_enabled: true
+    survey_spec:
+      name: ""
+      description: ""
+      spec:
+        - name: Prefered state
+          type: multiplechoice
+          question_name: Do you want to add or remove?
+          question_description: Add or Remove
+          variable: state
+          required: true
+          default: present
+          choices: present absent
 
   - name: "5 - Panos - Create virtual router and security zones"
     job_type: run
@@ -77,3 +116,16 @@ controller_templates:
     playbook: create_virtual_router_and_zones.yml
     credentials:
       - Daily Demo Panos API
+    survey_enabled: true
+    survey_spec:
+      name: ""
+      description: ""
+      spec:
+        - name: Prefered state
+          type: multiplechoice
+          question_name: Do you want to add or remove?
+          question_description: Add or Remove
+          variable: state
+          required: true
+          default: present
+          choices: present absent

@@ -4,8 +4,10 @@ controller_execution_environments:
     image: quay.io/locust61/panos_ee:0.2
     pull: missing
     organization: "{{ my_organization }}"
+    credential: quay.io
 
   - name: amazon_aws_ee
     image: quay.io/zigfreed/amazon_aws_ee:latest
     pull: missing
     organization: "{{ my_organization }}"
+    credential: quay.io
