@@ -59,7 +59,9 @@ controller_templates:
           variable: state
           required: true
           default: present
-          choices: present, absent
+          choices:
+            - present
+            - absent
 
   - name: "3 - Panos - Add/Remove security zones"
     job_type: run
@@ -82,7 +84,9 @@ controller_templates:
           variable: state
           required: true
           default: present
-          choices: present, absent
+          choices:
+            - present
+            - absent
 
   - name: "4 - Panos - Add/Remove security policy to firewall"
     job_type: run
@@ -105,7 +109,9 @@ controller_templates:
           variable: state
           required: true
           default: present
-          choices: present, absent
+          choices:
+            - present
+            - absent
 
   - name: "5 - Panos - Create virtual router and security zones"
     job_type: run
@@ -128,4 +134,6 @@ controller_templates:
           variable: state
           required: true
           default: present
-          choices: present, absent
+          choices:
+            - present
+            - absent
