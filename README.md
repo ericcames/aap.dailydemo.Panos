@@ -66,14 +66,6 @@ Example login using your ssh key that was shared with Amazon
 ssh admin@ec2-54-67-87-75.us-west-1.compute.amazonaws.com
 ```
 
-**The playbooks**
-
-[1 - Panos - Get System Info](https://gitlab.com/mlowcher/panos/-/blob/main/get_system_info_formatted.yml?ref_type=heads "1 - Panos - Get System Info")<br>
-[2 - Panos - Create firewall objects](https://gitlab.com/mlowcher/panos/-/blob/main/create_fw_objects.yml?ref_type=heads "2 - Panos - Create firewall objects")<br>
-[3 - Panos - Add/Remove security zones](https://gitlab.com/mlowcher/panos/-/blob/main/add_remove_firewall_zones.yml?ref_type=heads "3 - Panos - Add/Remove security zones")<br>
-[4 - Panos - Add/Remove security policy to firewall](https://gitlab.com/mlowcher/panos/-/blob/main/add_sec_policy_firewall.yml?ref_type=heads "4 - Panos - Add/Remove security policy to firewall")<br>
-[5 - Panos - Create virtual router and security zones](https://gitlab.com/mlowcher/panos/-/blob/main/create_virtual_router_and_zones.yml?ref_type=heads "5 - Panos - Create virtual router and security zones")
-
 **The Credentials Types**
 
 Red Hat Ansible Automation Platform<br>
@@ -90,19 +82,24 @@ Group name
 panosdemo
 ```
 
-Day 2
+Day 2 Operations
 =========
 
-**Example Playbooks**
-- [Panos example playbooks](https://gitlab.com/mlowcher/panos "Panos example playbooks")
+**Mark Lowcher's Playbooks**
 
+[1 - Panos - Get System Info](https://gitlab.com/mlowcher/panos/-/blob/main/get_system_info_formatted.yml?ref_type=heads "1 - Panos - Get System Info")<br>
+[2 - Panos - Create firewall objects](https://gitlab.com/mlowcher/panos/-/blob/main/create_fw_objects.yml?ref_type=heads "2 - Panos - Create firewall objects")<br>
+[3 - Panos - Add/Remove security zones](https://gitlab.com/mlowcher/panos/-/blob/main/add_remove_firewall_zones.yml?ref_type=heads "3 - Panos - Add/Remove security zones")<br>
+[4 - Panos - Add/Remove security policy to firewall](https://gitlab.com/mlowcher/panos/-/blob/main/add_sec_policy_firewall.yml?ref_type=heads "4 - Panos - Add/Remove security policy to firewall")<br>
+[5 - Panos - Create virtual router and security zones](https://gitlab.com/mlowcher/panos/-/blob/main/create_virtual_router_and_zones.yml?ref_type=heads "5 - Panos - Create virtual router and security zones")
+![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/panosbooks.png "The playbooks")<br>
 
 **Execution Environment**<br>
 - [Panos](https://quay.io/repository/locust61/panos_ee "Panos Execution Environment")
 ```
 quay.io/repository/locust61/panos_ee
 ```
-f5-execution-environment.yml
+Panos-execution-environment.yml
 ```
 ---
 version: 3
