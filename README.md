@@ -6,7 +6,7 @@ Notes
 =========
 1. This demo is designed to work with the Red Hat Demo Platform. Please see the aap.as.code repo below. [aap.as.code](https://github.com/ericcames/aap.as.code "aap.as.code")
 2. This demo works with Amazon only currently.
-3. Must accept Terms and conditions at this link before running this. https://aws.amazon.com/marketplace/pp/prodview-mn63yjbq37n4c
+3. Must accept Terms and conditions at this link while logged into the AWS environment before running this. https://aws.amazon.com/marketplace/pp/prodview-mn63yjbq37n4c
 ![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/panosoptin.png "Terms")
 
 Day 0 - Configuration as code (CAC) a repeatable build process for this demo
@@ -25,8 +25,18 @@ my_remote_ssh_pub_key: >-
   https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub
 ```
 
-Day 1
+Day 1 - Infrastructure as code (IAC) a repeatable build process for the Palo Alto
 =========
+
+[Daily Demo Panos Create/Remove](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/playbooks/main.yml "SDaily Demo Panos Create/Remove")<br>
+![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palomain.png "Main Playbook")<br>
+
+Tag used:
+```
+create
+  or
+remove
+```
 
 # The PaloAlto User Interface
 
@@ -58,15 +68,12 @@ ssh admin@ec2-54-67-87-75.us-west-1.compute.amazonaws.com
 
 **The playbooks**
 
-[1. Create or Delete PaloAlto](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/playbooks/main.yml "main.yml")<br>
-![alt text](https://github.com/ericcames/aap.dailydemo.Panos/blob/main/images/palomain.png "Main Playbook")<br>
+[1 - Panos - Get System Info](https://gitlab.com/mlowcher/panos/-/blob/main/get_system_info_formatted.yml?ref_type=heads "1 - Panos - Get System Info")<br>
+[2 - Panos - Create firewall objects](https://gitlab.com/mlowcher/panos/-/blob/main/create_fw_objects.yml?ref_type=heads "2 - Panos - Create firewall objects")<br>
+[3 - Panos - Add/Remove security zones](https://gitlab.com/mlowcher/panos/-/blob/main/add_remove_firewall_zones.yml?ref_type=heads "3 - Panos - Add/Remove security zones")<br>
+[4 - Panos - Add/Remove security policy to firewall](https://gitlab.com/mlowcher/panos/-/blob/main/add_sec_policy_firewall.yml?ref_type=heads "4 - Panos - Add/Remove security policy to firewall")<br>
+[5 - Panos - Create virtual router and security zones](https://gitlab.com/mlowcher/panos/-/blob/main/create_virtual_router_and_zones.yml?ref_type=heads "5 - Panos - Create virtual router and security zones")
 
-Tag used:
-```
-create
-  or
-remove
-```
 **The Credentials Types**
 
 Red Hat Ansible Automation Platform<br>
