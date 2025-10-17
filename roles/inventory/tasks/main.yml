@@ -109,6 +109,19 @@
         inventory: "{{ inventory_managed_inventory_name }}"
         state: absent
 
+    - name: Update the AAP Managed Inventory localhost variable
+      ansible.controller.host:
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+        controller_oauthtoken: "{{ aap_token['token'] }}"
+        validate_certs: false
+        name: localhost
+        inventory: "{{ inventory_managed_inventory_name }}"
+        state: present
+        enabled: true
+        variables:
+          ansible_host: '127.0.0.1'
+          ansible_connection: 'local'
+
     - name: Remove my token
       ansible.platform.token:
         aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"

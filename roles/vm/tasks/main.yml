@@ -69,6 +69,7 @@
     - name: Set the initial admin password
       ansible.builtin.expect:
         command: "ssh -o StrictHostKeyChecking=accept-new admin@{{ ec2_vms.instances[0].public_dns_name }}"
+        timeout: 120
         responses:
           "admin@PA-VM>":
             - "configure"
